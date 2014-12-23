@@ -1,1 +1,1 @@
-web: gunicorn hello:app -b $VCAP_APP_HOST:$PORT
+web: gunicorn hello:app -b $VCAP_APP_HOST:$VCAP_APP_PORT

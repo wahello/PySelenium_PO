@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+html {
+    padding: 30px 10px;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #737373;
+    background: #f0f0f0;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+html,
+input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    color: #222;
+    font-size: 16px;
+    line-height: 1.666;
+    max-width: 70%;
+    max-height: 100%;
+    padding: 30px 20px 50px;
+    border: 1px solid #b3b3b3;
+    border-radius: 4px;
+    margin: 0 auto;
+    box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+    background: #fcfcfc;
+}
+
+.text-input {
+    display: block;
+    width: 150px;
+    height: 30px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.box-input {
+    display: block;
+    width: 80%;
+    height: 30px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+h1 {
+    margin: 0 10px;
+    font-size: 50px;
+    text-align: center;
+}
+
+h1 span {
+    color: #bbb;
+}
+
+h3 {
+    margin: 1.5em 0 0.5em;
+}
+
+div {
+    word-wrap: break-word;
+    word-break: normal;
+    display: block;
+}
+
+p {
+    margin: 1em 0;
+}
+
+ul {
+    padding: 0 0 0 40px;
+    margin: 1em 0;
+}
+
+#tablefirst {
+    border-spacing: 0 40px;
+    margin-bottom:10px;
+}
+
+/* google search */
+
+#goog-fixurl ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#goog-fixurl form {
+    margin: 0;
+}
+
+.goog-wm-qt,
+.goog-wm-sb {
+    border: 1px solid #bbb;
+    font-size: 14px;
+    line-height: normal;
+    color: #444;
+    border-radius: 2px;
+}
+
+.goog-wm-qt {
+    width: 220px;
+    height: 32px;
+    padding: 5px;
+    margin: 5px 10px 0 0;
+    box-shadow: inset 0 1px 1px #ccc;
+}
+
+.goog-wm-tf {
+    font-size: 13px;
+    width: 80px;
+    height: 30px;
+    padding: 0px;
+
+}
+
+.goog-wm-sb {
+    display: inline-block;
+    height: 32px;
+    padding: 0 10px;
+    margin: 5px 0 0;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), #f1f1f1);
+    background-image: -moz-linear-gradient(rgba(255, 255, 255, 0), #f1f1f1);
+    background-image: -ms-linear-gradient(rgba(255, 255, 255, 0), #f1f1f1);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, 0), #f1f1f1);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    *overflow: visible;
+    *display: inline;
+    *zoom: 1;
+}
+
+#goog-wm-sb:hover,
+#goog-wm-sb:focus {
+    border-color: #aaa;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+}
+
+#goog-wm-qt:hover,
+#goog-wm-qt:focus {
+    border-color: #105cb6;
+    outline: 0;
+    color: #222;
+}
+
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+.w {
+    margin: 0 auto;
+}
+
+.widget-famoussite span {
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+}
+
+/* 新建联系人CSS */
+
+.nui-msgbox-bd {
+    color: #555;
+    border-bottom: 1px solid #E1E1E1;
+}
+
+.nui-msgbox-hd {
+    text-align: center;
+    color: #666;
+    padding: 0 12px;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px solid #C2C2C2;
+    background: #eee;
+    cursor: move;
+}
+
+.tg0 {
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.pc0 {
+    width: 400px;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    top: 0;
+}
+
+.pc0 {
+    -webkit-transition-property: all;
+    -webkit-transition-duration: .2s;
+    -moz-transition-property: all;
+    -moz-transition-duration: .2s;
+    -o-transition-property: all;
+    -o-transition-duration: .2s;
+}
+
+.nui-scroll {
+    position: relative;
+    overflow: auto;
+}
+
+.ph0 {
+    padding: 20px 0 10px 30px;
+    zoom: 1;
+}
+
+.ou0 {
+    position: relative;
+    font-size: 12px;
+    width: 99%;
+}
+
+ul, ol, li, form, p, dl, dt, dd, blockquote, legend, table, th, td, fieldset, menu, pre {
+    margin: 0;
+    padding: 0;
+}
+
+.tg0 .iX0 {
+    width: 70px;
+    left: -7px;
+    top: 5px;
+    text-align: right;
+    color: #666;
+    overflow: visible;
+}
+
+.iX0 {
+    position: absolute;
+    width: 114px;
+    line-height: 24px;
+    left: 24px;
+    top: 1px;
+    color: #999;
+    z-index: 1;
+}
+
+.tg0 .is0 {
+    padding: 5px 0 5px 77px;
+}
+
+.is0 {
+    padding-left: 92px;
+    line-height: 24px;
+    position: relative;
+    zoom: 1;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.tg0 .iX0 .nui-simpleSelect {
+    padding-right: 14px;
+    white-space: nowrap;
+    margin-right: -5px;
+}
+
+.nui-msgbox {
+    border-radius: 4px;
+    overflow: hidden;
+    outline: 0;
+    border: 1px solid #888;
+    width: 484px;
+    position: fixed;
+    -position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    line-height: 1.666;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    background: #fafafa;
+}
+
+.nui-simpleTree .nui-tree-item-text, .nui-layer, .nui-msgbox, .nui-fBr {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.nui-msgbox-ft {
+    position: relative;
+    height: 45px;
+    border-top: 1px solid #fff;
+    background: #FAFAFA;
+}
+
+.nui-msgbox-ft-btns {
+    padding: 0 20px;
+    position: absolute;
+    right: 0;
+    top: 7px;
+}
+
+.nui-msgbox-ft-btns .nui-btn {
+    float: left;
+    margin-right: 8px;
+}
+
+.nui-msgbox .nui-ico, .nui-layer .nui-ico {
+    left: 3px;
+    top: 3px;
+}
+
+.nui-ico {
+    font-weight: 400;
+    text-align: center;
+    line-height: normal;
+    overflow: hidden;
+}
+
+.nui-ico-checkbox {
+    width: 16px;
+    height: 16px;
+}
+
+.nui-ico {
+    font-family: nui !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*CSS Code for Menu Begin:*/
+/* Root = Horizontal, Secondary = Vertical */
+ul#navmenu {
+    margin: 0;
+    border: 0 none;
+    padding: 0;
+    width: 500px; /*For KHTML*/
+    list-style: none;
+    height: 24px;
+}
+
+ul#navmenu li {
+    margin: 0;
+    border: 0 none;
+    padding: 0;
+    float: left; /*For Gecko*/
+    display: inline;
+    list-style: none;
+    position: relative;
+    height: 24px;
+}
+
+ul#navmenu ul {
+    margin: 0;
+    border: 0 none;
+    padding: 0;
+    width: 160px;
+    list-style: none;
+    display: none;
+    position: absolute;
+    top: 24px;
+    left: 0;
+}
+
+ul#navmenu ul li {
+    float: none; /*For Gecko*/
+    display: block !important;
+    display: inline; /*For IE*/
+}
+
+/* Root Menu */
+ul#navmenu a {
+    border: 1px solid #FFF;
+    border-right-color: #CCC;
+    border-bottom-color: #CCC;
+    padding: 0 6px;
+    float: none !important; /*For Opera*/
+    float: left; /*For IE*/
+    display: block;
+    background: #EEE;
+    color: #666;
+    font: bold 10px/22px Verdana, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    height: auto !important;
+    height: 1%; /*For IE*/
+}
+
+/* Root Menu Hover Persistence */
+ul#navmenu a:hover,
+ul#navmenu li:hover a,
+ul#navmenu li.iehover a {
+    background: #CCC;
+    color: #FFF;
+}
+
+/* 2nd Menu */
+ul#navmenu li:hover li a,
+ul#navmenu li.iehover li a {
+    float: none;
+    background: #EEE;
+    color: #666;
+}
+
+/* 2nd Menu Hover Persistence */
+ul#navmenu li:hover li a:hover,
+ul#navmenu li:hover li:hover a,
+ul#navmenu li.iehover li a:hover,
+ul#navmenu li.iehover li.iehover a {
+    background: #CCC;
+    color: #FFF;
+}
+
+/* 3rd Menu */
+ul#navmenu li:hover li:hover li a,
+ul#navmenu li.iehover li.iehover li a {
+    background: #EEE;
+    color: #666;
+}
+
+/* 3rd Menu Hover Persistence */
+ul#navmenu li:hover li:hover li a:hover,
+ul#navmenu li:hover li:hover li:hover a,
+ul#navmenu li.iehover li.iehover li a:hover,
+ul#navmenu li.iehover li.iehover li.iehover a {
+    background: #CCC;
+    color: #FFF;
+}
+
+/* 4th Menu */
+ul#navmenu li:hover li:hover li:hover li a,
+ul#navmenu li.iehover li.iehover li.iehover li a {
+    background: #EEE;
+    color: #666;
+}
+
+/* 4th Menu Hover */
+ul#navmenu li:hover li:hover li:hover li a:hover,
+ul#navmenu li.iehover li.iehover li.iehover li a:hover {
+    background: #CCC;
+    color: #FFF;
+}
+
+ul#navmenu ul ul,
+ul#navmenu ul ul ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 160px;
+}
+
+/* Do Not Move - Must Come Before display:block for Gecko */
+ul#navmenu li:hover ul ul,
+ul#navmenu li:hover ul ul ul,
+ul#navmenu li.iehover ul ul,
+ul#navmenu li.iehover ul ul ul {
+    display: none;
+}
+
+ul#navmenu li:hover ul,
+ul#navmenu ul li:hover ul,
+ul#navmenu ul ul li:hover ul,
+ul#navmenu li.iehover ul,
+ul#navmenu ul li.iehover ul,
+ul#navmenu ul ul li.iehover ul {
+    display: block;
+}
+</style>
+<script type="text/JavaScript">
+    navHover = function () {
+        var lis = document.getElementById("navmenu").getElementsByTagName("LI");
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function () {
+                this.className += " iehover";
+            }
+            lis[i].onmouseout = function () {
+                this.className = this.className.replace(new RegExp(" iehover\\b"), "");
+            }
+        }
+    }
+    if (window.attachEvent) window.attachEvent("onload", navHover);
+</script>
+<title>Xpath 的示例</title>
+</head>
+<body>
+<!--填写联系人的Div窗口-->
+<div id="divbox" class="js-component-msgbox nui-msgbox"
+     style="width: 428px; top: 113px; left: 699px; zoom: 1; display:none">
+    <div class="nui-msgbox-hd">新建联系人</div>
+
+    <div class="nui-msgbox-bd">
+        <div class="nui-msgbox-wide ">
+            <div id="_mail_contactedit_0_223" class="js-component-contactedit tg0">
+                <div id="contact_edit_main" class="pc0 nui-scroll" style="left:0">
+                    <div class="ph0">
+                        <div id="contact_edit_main_normal" class="jK0">
+                            <dl class="ou0">
+                                <dt class="iX0">姓名</dt>
+                                <dd class="is0">
+                                    <div id="_mail_input_5_224" class="js-component-input nui-ipt"><input
+                                            class="box-input" type="text"></div>
+                                    <a id="_mail_link_16_225" href="javascript:void(0)"
+                                       class="nui-txt-link" hidefocus="hidefocus"
+                                       title="添加详细姓名">详细</a></dd>
+                            </dl>
+                            <div class="eH0" id="iaddress_MAIL_wrap">
+
+                                <dl class="ou0">
+                                    <dt class="iX0">
+                                    <div tabindex="0">
+                                        <select class="goog-wm-tf">
+                                            <option>电子邮箱</option>
+                                            <option value="0">家庭邮箱</option>
+                                            <option value="1">工作邮箱</option>
+                                        </select>
+                                    </div>
+
+                                    </dt>
+                                    <dd class="is0">
+                                        <div id="_mail_input_6_227" class="js-component-input nui-ipt">
+                                            <input class="box-input" type="text">
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <dl class="ou0">
+                                <dt class="iX0"></dt>
+                                <dd class="is0">
+                                        <span><input type="checkbox" class="nui-ico-checkbox">
+                                        <span class="nui-chk-text">设为星标联系人</span></span>
+                                    <b class="nui-ico nui-ico-help"
+                                       title="设为星标联系人后，该联系人将添加至收件箱的左侧栏，您可以很方便的查看他们的往来邮件哦！"></b>
+                                </dd>
+                            </dl>
+                            <div class="eH0" id="iaddress_TEL_wrap">
+                                <dl class="ou0">
+                                    <dt class="iX0">
+                                    <div tabindex="0">
+                                        <select class="goog-wm-tf">
+                                            <option>手机号码</option>
+                                            <option value="0">电话号码</option>
+                                            <option value="1">家庭电话</option>
+                                            <option value="1">办公电话</option>
+                                        </select>
+                                    </div>
+                                    </dt>
+                                    <dd class="is0">
+                                        <div id="_mail_input_7_232" class="js-component-input nui-ipt ">
+                                            <input class="box-input" type="text"></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <dl class="ou0">
+                                <dt class="iX0">备注</dt>
+                                <dd class="is0">
+                                    <div id="_mail_input_8_235"
+                                         class="js-component-input nui-multiLineIpt nui-ipt ">
+                                        <textarea class="box-input" rows="2"></textarea></div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nui-msgbox-ft">
+        <div class="nui-msgbox-ft-btns">
+            <span><button type="button" class="btn btn-sm btn-success">确 定</button></span>
+            <span><button type="button" class="btn btn-sm btn-default" onclick="closediv()">取 消</button></span>
+        </div>
+    </div>
+</div>
+<button type="button" class="btn btn-sm btn-primary" onclick="opendiv()">打开Div</button>
+<!--打开和关闭Div的JavaScript!-->
+<script type="text/javascript">
+    var box1 = document.getElementById('divbox');
+    function opendiv() {
+        box1.style.display = '';
+    }
+    function closediv() {
+        box1.style.display = 'none';
+    }
+</script>
+<hr/>
+<h1>INPUT标签示例<span>!</span></h1>
+<hr>
+<div align="center">
+    <table id="tablefirst" border="0" style="border-color: #E1E1E1;">
+        <tr>
+            <td>用户名：</td>
+            <td><input id="username" name="username" title="用户名" class="box-input" type="text" placeholder="Ray"/></td>
+        </tr>
+        <tr>
+            <td>密码：</td>
+            <td><input id="password" name="password" title="密码" class="box-input" type="password"
+                       placeholder="******"/>
+            </td>
+        </tr>
+        <tr>
+            <td>复选框</td>
+            <td style="word-break:break-all">
+                <label>01</label><input class="nui-ico-checkbox" type='checkbox' name='VoteOption1'>足球<br>
+                <label>02</label><input class="nui-ico-checkbox" type='checkbox' name='VoteOption1'>篮球<br>
+                <label>03</label><input class="nui-ico-checkbox" type='checkbox' name='VoteOption1'>网球<br>
+                <label>04</label><input class="nui-ico-checkbox" type="hidden" name="zq" value="4"><br>
+                <label>05</label><input class="nui-ico-checkbox" type="hidden" name="lq" value="5"><br>
+                <label>06</label><input class="nui-ico-checkbox" type="hidden" name="wq" value="6"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>单选框</td>
+            <td>
+                <input class="nui-ico-checkbox" type="radio" name='Option' value="yw" alt="语文">语文<br>
+                <input class="nui-ico-checkbox" type='radio' name='Option' value="sx">数学<br>
+                <input class="nui-ico-checkbox" type='radio' name='Option' value="yw">英语<br>
+            </td>
+        </tr>
+        <tr>
+            <td>周控件</td>
+            <td>
+                <input class="box-input" type="week" name='week'>
+            </td>
+        </tr>
+        <tr>
+            <td>日期控件</td>
+            <td>
+                <input class="box-input" type="date" name='date'>
+            </td>
+        </tr>
+        <tr>
+            <td>附件</td>
+            <td>
+                <input class="box-input" type="file" name='file'>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
+<hr>
+<h1>A 标签示例<span>!</span></h1>
+<hr/>
+<div class="w" align="center">
+    <div>
+        <span>
+        <a class="btn btn-default" href="http://www.baidu.com">百度</a>
+        </span>
+        <span>
+            <a class="btn btn-primary" href="http://www.58.com">58 同 城</a>
+        </span>
+        <span>
+            <a class="btn btn-success" href="http://www.fang.com/">搜 房 网</a>
+        </span>
+        <span>
+            <a class="btn btn-info" href="http://www.ctrip.com">携 程 网</a>
+        </span>
+        <span>
+            <a class="btn btn-warning" href="http://www.hunantv.com">芒果TV</a>
+        </span>
+        <span>
+            <a class="btn btn-danger" href="http://www.qq.com">腾讯</a>
+        </span>
+    </div>
+</div>
+<hr>
+<div align="center">
+    <h1>下拉框示例<span>!</span></h1>
+
+    <div style="display: table-row">
+        <!-- 一级下拉框 -->
+        <select class="goog-wm-sb">
+            <option>请选择省份</option>
+            <option value="0">北京</option>
+            <option value="1">上海</option>
+            <option value="3">广州</option>
+            <option value="4">西安</option>
+            <option value="5">南京</option>
+            <option value="6">杭州</option>
+        </select>
+        <!-- 一级下拉框 -->
+        <select class="goog-wm-qt">
+            <option>请选择省份</option>
+            <option value="0">北京</option>
+            <option value="1">上海</option>
+            <option value="3">广州</option>
+            <option value="4">西安</option>
+            <option value="5">南京</option>
+            <option value="6">杭州</option>
+        </select>
+        <!-- 二级下拉框 -->
+        <select class="goog-wm-sb">
+            <option>请选择权限</option>
+            <optgroup label="首页信息发布">
+                <option value="新增图片">新增图片</option>
+                <option value="维护图片">维护图片</option>
+                <option value="新增新闻">新增新闻</option>
+            </optgroup>
+            <optgroup label="人员维护">
+                <option value="新增用户">新增用户</option>
+                <option value="用户列表">用户列表</option>
+            </optgroup>
+        </select>
+        <!-- 二级下拉框 -->
+        <select class="goog-wm-qt">
+            <option>请选择权限</option>
+            <optgroup label="首页信息发布">
+                <option value="新增图片">新增图片</option>
+                <option value="维护图片">维护图片</option>
+                <option value="新增新闻">新增新闻</option>
+            </optgroup>
+            <optgroup label="人员维护">
+                <option value="新增用户">新增用户</option>
+                <option value="用户列表">用户列表</option>
+            </optgroup>
+        </select>
+        <!--   联动的下拉框
+                <div>
+                    <div>
+
+                        所属班级：
+                        <select class="goog-wm-qt" id="sel01" childId="sel02" onchange="sel02()">
+                            <option value="">请选择专业</option>
+                            <option value="1">计算机</option>
+                            <option value="2">美术</option>
+                        </select>
+                    </div>
+                    <div>
+                        所属班级：
+                        <select class="goog-wm-qt" id="sel02">
+                            <option value="0">请先选择专业</option>
+                            <option value="1">网络班</option>
+                            <option value="2">美术班</option>
+                        </select>
+                    </div>
+                </div>
+        -->
+    </div>
+</div>
+    <hr>
+<div align="center">
+    <h1>CSS下拉菜单示例<span>!</span></h1>
+    <hr>
+    <ul id="navmenu">
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Work +</a>
+            <ul>
+                <li><a href="#">Websites +</a>
+                    <ul>
+                        <li><a href="#">Baidu</a></li>
+                        <li><a href="#">QQ</a></li>
+                        <li><a href="#">Google</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Pen and Ink</a></li>
+                <li><a href="#">Free Interfaces</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Learn +</a>
+            <ul>
+                <li><a href="#">Selenium +</a>
+                    <ul>
+                        <li><a href="#">xpath</a></li>
+                        <li><a href="#">webdriver</a></li>
+                        <li><a href="#">gird</a></li>
+                        <li><a href="#">Rc</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Python +</a>
+                    <ul>
+                        <li><a href="#">Dict</a></li>
+                        <li><a href="#">List</a></li>
+                        <li><a href="#">@import</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">Info</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+    <hr>
+<div align="right">
+
+    <p><a target="_blank" href="http://www.w3school.com.cn/xpath/">http://www.w3school.com.cn/xpath/</a></p>
+
+    <p><a target="_blank" href="http://pan.baidu.com/s/1ntieVyD">工具xpath Checker</a></p>
+    <ul style="list-style: none">
+        <li ><span class="label label-default">Ray</span></li>
+        <li><span class="label label-default">tsbc@vip.qq.com</span></li>
+    </ul>
+    <script>
+        var GOOG_FIXURL_LANG = (navigator.language || '').slice(0, 2), GOOG_FIXURL_SITE = location.host;
+    </script>
+</div>
+</body>
+</html>

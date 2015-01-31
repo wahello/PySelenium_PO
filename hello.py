@@ -22,7 +22,7 @@ class EnvHandler(tornado.web.RequestHandler):
         self.write(html)
 application = tornado.web.Application([
     (r"/env", EnvHandler),
-    (r"/()$", tornado.web.StaticFileHandler, {'path':'html/Pyselenium.html'}),
+    (r"/()$", tornado.web.StaticFileHandler, {'path':'html/exapage.html'}),
     (r"/(.*)", tornado.web.StaticFileHandler, {'path':'html/'}),
     (r"/.*", MainHandler),
     ], **settings)

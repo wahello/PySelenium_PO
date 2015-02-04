@@ -611,6 +611,7 @@ ul#navmenu ul ul li.iehover ul {
     </div>
 </div>
 <button type="button" class="btn btn-sm btn-primary" onclick="opendiv()">打开Div</button>
+<button type="button" class="btn btn-sm btn-primary" onclick="openModal()">打开模态窗口</button>
 <!--打开和关闭Div的JavaScript!-->
 <script type="text/javascript">
     var box1 = document.getElementById('divbox');
@@ -620,6 +621,18 @@ ul#navmenu ul ul li.iehover ul {
     function closediv() {
         box1.style.display = 'none';
     }
+</script>
+<!--打开模态窗口-->
+<script>
+function openModal()
+{
+  var a = new Array;
+  a[0] = 1;
+
+  var r = window.showModalDialog('form.html',a,"window.dialogWidth:300; window.dialogHeight:200; resizable:no");
+  document.getElementById('foo').textContent = r;
+
+}
 </script>
 <hr/>
 <h1>INPUT标签示例<span>!</span></h1>

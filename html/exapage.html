@@ -107,7 +107,7 @@ ul {
 
 #tablefirst {
     border-spacing: 0 40px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
 /* google search */
@@ -524,7 +524,7 @@ ul#navmenu ul ul li.iehover ul {
 <body>
 <!--填写联系人的Div窗口-->
 <div id="divbox" class="js-component-msgbox nui-msgbox"
-     style="width: 428px; top: 150px; left: 300px; zoom: 1; display:none">
+     style="width: 428px; top: 113px; left: 699px; zoom: 1; display:none">
     <div class="nui-msgbox-hd">新建联系人</div>
 
     <div class="nui-msgbox-bd">
@@ -536,9 +536,9 @@ ul#navmenu ul ul li.iehover ul {
                             <dl class="ou0">
                                 <dt class="iX0">姓名</dt>
                                 <dd class="is0">
-                                    <div id="_mail_input_5_224" class="js-component-input nui-ipt"><input
+                                    <div id="_mail_input_-_224" class="js-component-input nui-ipt"><input
                                             class="box-input" type="text"></div>
-                                    <a id="_mail_link_16_225" href="javascript:void(0)"
+                                    <a id="_mail_link__225" href="javascript:void(0)"
                                        class="nui-txt-link" hidefocus="hidefocus"
                                        title="添加详细姓名">详细</a></dd>
                             </dl>
@@ -556,7 +556,7 @@ ul#navmenu ul ul li.iehover ul {
 
                                     </dt>
                                     <dd class="is0">
-                                        <div id="_mail_input_6_227" class="js-component-input nui-ipt">
+                                        <div id="_mail_input-6_227" class="js-component-input nui-ipt">
                                             <input class="box-input" type="text">
                                         </div>
                                     </dd>
@@ -584,7 +584,7 @@ ul#navmenu ul ul li.iehover ul {
                                     </div>
                                     </dt>
                                     <dd class="is0">
-                                        <div id="_mail_input_7_232" class="js-component-input nui-ipt ">
+                                        <div id="_mail_input-7_232" class="js-component-input nui-ipt ">
                                             <input class="box-input" type="text"></div>
                                     </dd>
                                 </dl>
@@ -624,15 +624,14 @@ ul#navmenu ul ul li.iehover ul {
 </script>
 <!--打开模态窗口-->
 <script>
-function openModal()
-{
-  var a = new Array;
-  a[0] = 1;
+    function openModal() {
+        var a = new Array;
+        a[0] = 1;
 
-  var r = window.showModalDialog('form.html',a,"window.dialogWidth:300; window.dialogHeight:200; resizable:no");
-  document.getElementById('foo').textContent = r;
+        var r = window.showModalDialog('form.html', a, "window.dialogWidth:300; window.dialogHeight:200; resizable:no");
+        document.getElementById('foo').textContent = r;
 
-}
+    }
 </script>
 <hr/>
 <h1>INPUT标签示例<span>!</span></h1>
@@ -692,28 +691,44 @@ function openModal()
 <hr>
 <h1>A 标签示例<span>!</span></h1>
 <hr/>
-<div class="w" align="center">
-    <div>
-        <span>
-        <a class="btn btn-default" href="http://www.baidu.com">百度</a>
-        </span>
-        <span>
-            <a class="btn btn-primary" href="http://www.58.com">58 同 城</a>
-        </span>
-        <span>
-            <a class="btn btn-success" href="http://www.fang.com/">搜 房 网</a>
-        </span>
-        <span>
-            <a class="btn btn-info" href="http://www.ctrip.com">携 程 网</a>
-        </span>
-        <span>
-            <a class="btn btn-warning" href="http://www.hunantv.com">芒果TV</a>
-        </span>
-        <span>
-            <a class="btn btn-danger" href="http://www.qq.com">腾讯</a>
-        </span>
-    </div>
+<div id="link" class="w" align="center">
+    <table id="lk" border="0" style="border-color: #E1E1E1;">
+        <tr>
+            <td>
+                <div id="bd">
+                    <span>
+                    <a class="btn btn-default" href="http://www.baidu.com">百度</a>
+                    </span>
+                </div>
+            </td>
+            <td>
+                <div id="ls">
+                    <span>
+                        <a class="btn btn-primary" href="http://www.58.com">58 同 城</a>
+                    </span>
+                    <span id="sf">
+                        <a class="btn btn-success" href="http://www.fang.com/">搜 房 网</a>
+                    </span>
+                    <span id="xc">
+                        <a class="btn btn-info" href="http://www.ctrip.com">携 程 网</a>
+                    </span>
+                    <span>
+                        <a id='mg' class="btn btn-warning" href="http://www.hunantv.com">芒果TV</a>
+                    </span>
+                </div>
+            </td>
+            <td>
+                <div id="tx">
+                    <span>
+                        <a class="btn btn-danger" href="http://www.qq.com">腾讯</a>
+                    </span>
+                </div>
+            </td>
+        </tr>
+    </table>
+
 </div>
+
 <hr>
 <div align="center">
     <h1>下拉框示例<span>!</span></h1>
@@ -788,7 +803,7 @@ function openModal()
         -->
     </div>
 </div>
-    <hr>
+<hr>
 <div align="center">
     <h1>CSS下拉菜单示例<span>!</span></h1>
     <hr>
@@ -830,14 +845,14 @@ function openModal()
         <li><a href="#">Contact</a></li>
     </ul>
 </div>
-    <hr>
-<div align="right">
+<hr>
+<div id="info" align="right">
 
     <p><a target="_blank" href="http://www.w3school.com.cn/xpath/">http://www.w3school.com.cn/xpath/</a></p>
 
     <p><a target="_blank" href="http://pan.baidu.com/s/1ntieVyD">工具xpath Checker</a></p>
     <ul style="list-style: none">
-        <li ><span class="label label-default">Ray</span></li>
+        <li id="ray"><span class="label label-default">Ray</span></li>
         <li><span class="label label-default">tsbc@vip.qq.com</span></li>
     </ul>
     <script>

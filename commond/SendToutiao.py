@@ -1,6 +1,4 @@
 # -*- coding:utf-8 -*-
-__author__ = 'Ray'
-
 from selenium import webdriver
 import unittest
 import sys
@@ -10,7 +8,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 class Sendweibo(unittest.TestCase):
-	"""自动捕捉新闻内容，发送新浪微博"""
+	"""新闻捕捉"""
 	#脚本初始化
 	def setUp(self):
 		print "staring"
@@ -21,7 +19,7 @@ class Sendweibo(unittest.TestCase):
 	#测试用例
 	def test_send_news(self):
 		"""
-		组件调用，进行发送新闻微博
+		测试Demo
 		"""
 		self.toutiao_url = "http://toutiao.com"
 		self.huati_url = "http://www.qq.com"

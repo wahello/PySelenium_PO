@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-__author__ = 'Ray'
+__author__ = 'tsbc'
 
 import sys
 import time
@@ -9,9 +9,8 @@ sys.setdefaultencoding('utf-8')
 
 class News:
 
-    def get_toutiao(self, driver, url):
-        """获取进入头条页面中的前6个标题"""
-        self.driver = driver
+	def get_toutiao(self, driver, url):
+		self.driver = driver
 		self.base_url = url
 		self.ennum = Encryption.Encryption()
 		driver.get(self.base_url + "/")
@@ -28,7 +27,6 @@ class News:
 		return event
 
 	def get_huati(self, driver, url):
-        """获取腾讯新闻今日话题中的标题"""
 		self.driver = driver
 		self.base_url = url
 		self.ennum = Encryption.Encryption()
@@ -49,7 +47,6 @@ class News:
 		print event
 
 	def loginweibo(self, driver, username, password, url, event):
-        """登录新浪微博，并发布微博event事件"""
 		driver.get(url+"/")
 		time.sleep(5)
 		print u"准备发布内容请稍候..."

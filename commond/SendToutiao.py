@@ -12,7 +12,7 @@ class Sendweibo(unittest.TestCase):
 	#脚本初始化
 	def setUp(self):
 		print "staring"
-		self.driver = webdriver.Firefox()
+		self.driver = webdriver.PhantomJS()
 		self.driver.implicitly_wait(30)
 		self.ennum = Encryption.Encryption()
 		self.news = Getnews.News()

@@ -33,8 +33,9 @@ class Sendweibo(unittest.TestCase):
 
 		#获取今日话题新闻事件内容
 		#event_ = self.news.get_huati(driver, self.huati_url)
-
+		
 		#登录微博准备发布
+		print u"进行登录新浪微博！"
 		self.news.loginweibo(driver, self.username, self.password, self.weibo_url, event)
 
 	#脚本退出

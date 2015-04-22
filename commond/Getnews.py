@@ -24,8 +24,8 @@ class News:
 		menulink = driver.find_elements_by_xpath("//ul[@data-node='listBox']/li[position()<7]//a[@ga_event='feed_title']")
 		for i in menulink:
 			event += i.text + "|"
-		print event
-		return event
+		print event.decode('utf-8')
+		return event.decode('utf-8')
 
 	def get_huati(self, driver, url):
 		self.driver = driver

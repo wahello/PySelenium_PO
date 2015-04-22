@@ -20,9 +20,10 @@ class News:
 		event = ""
 		event += title
 		driver.find_element_by_xpath("//a[@ga_event='feed_refresh']").click()
+		time.sleep(2)
 		menulink = driver.find_elements_by_xpath("//ul[@data-node='listBox']/li[position()<7]//a[@ga_event='feed_title']")
 		for i in menulink:
-			event += i.text + " "
+			event += i.text + "|"
 		print event
 		return event
 

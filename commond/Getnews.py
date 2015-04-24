@@ -1,11 +1,9 @@
 # -*- coding:utf-8 -*-
 __author__ = 'tsbc'
 
-import sys
 import time
 import Encryption
-reload(sys)
-sys.setdefaultencoding('utf-8')
+
 
 class News:
 
@@ -33,7 +31,7 @@ class News:
 		self.ennum = Encryption.Encryption()
 		driver.get(self.base_url + "/")
 		driver.maximize_window()
-		title = u"#今日话题#"
+		title = r"#今日话题#"
 
 		event = ""
 		event += title
@@ -50,21 +48,21 @@ class News:
 	def loginweibo(self, driver, username, password, url, event):
 		driver.get(url+"/")
 		time.sleep(5)
-		print u"准备发布内容请稍候..."
+		print r"准备发布内容请稍候..."
 
 		driver.find_element_by_xpath("//input[@node-type='username']").send_keys(username)
-		#print u"输入用户名"
+		#print r"输入用户名"
 		driver.find_element_by_xpath("//input[@node-type='password']").send_keys(password)
-		#print u"输入密码"
+		#print r"输入密码"
 		driver.find_element_by_xpath("//div[@node-type='normal_form']//a[@node-type='submitBtn']").click()
-		#print u"点击登录"
+		#print r"点击登录"
 		time.sleep(5)
 		driver.find_element_by_xpath("//a[@node-type='publish']").click()
 		time.sleep(1)
-		#print u"点击编辑框图标"
+		#print r"点击编辑框图标"
 		driver.find_element_by_xpath("//textarea[@node-type='textEl']").send_keys(event)
-		print u"填写发送内容"
+		print r"填写发送内容"
 		#print driver.page_source
 		driver.find_element_by_xpath("//a[@node-type='submit']").click()
-		print u"进行发布微博"
+		print r"进行发布微博"
 		time.sleep(0.5)

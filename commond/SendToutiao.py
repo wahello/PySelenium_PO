@@ -1,10 +1,11 @@
 # -*- coding:utf-8 -*-
 from selenium import webdriver
 import unittest
-
+import sys
 import Encryption
 import Getnews
-
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 class Sendweibo(unittest.TestCase):
 	"""新闻捕捉"""
@@ -34,7 +35,7 @@ class Sendweibo(unittest.TestCase):
 		#event_ = self.news.get_huati(driver, self.huati_url)
 		
 		#登录微博准备发布
-		print r"进行登录新浪微博！"
+		print u"进行登录新浪微博！"
 		self.news.loginweibo(driver, self.username, self.password, self.weibo_url, event)
 
 	#脚本退出

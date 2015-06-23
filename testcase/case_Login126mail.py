@@ -17,6 +17,7 @@ class Login126Mail(unittest.TestCase):
 	@classmethod
 	def setUpClass(cls):
 		print "start"
+		
 		cls.driver = webdriver.Firefox()
 		cls.driver.implicitly_wait(30)
 		#声明find_element方法

@@ -4,7 +4,8 @@ __author__ = 'Ray'
 import xmpp
 import time
 """
-xmpp download http://pan.baidu.com/s/1ntvI445
+使用 第三方 xmpp 库支持
+download http://pan.baidu.com/s/1ntvI445
 """
 
 to = ['admin@im.e-u.cn']

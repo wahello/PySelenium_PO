@@ -1,6 +1,5 @@
 #-*- coding: utf-8 -*-
 __author__ = 'tsbc'
-import sys
 import unittest
 import sys
 reload(sys)

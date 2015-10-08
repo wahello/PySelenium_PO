@@ -17,7 +17,7 @@ def savePngName(name):
         print filename
         return filename
     else:
-        os.mkdir(fp)
+        os.makedirs(fp)
         filename = str(fp)+ "\\" + str(tm)+str("_")+str(name)+str(type)
         print filename
         return filename

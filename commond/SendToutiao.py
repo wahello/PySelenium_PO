@@ -10,7 +10,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 class Sendweibo(unittest.TestCase):
-	"""发送新闻微博"""
+	"""自动捕捉新闻内容，发送新浪微博"""
 	#脚本初始化
 	def setUp(self):
 		print "staring"

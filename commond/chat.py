@@ -3,6 +3,11 @@ import xmpp
 import time
 import datetime
 import os
+
+"""
+xmpp download http://pan.baidu.com/s/1ntvI445
+"""
+
 username = 'chenjiangpeng@xtpt.e-u.cn'
 password = 'a1b2c3d4'
 to = ['chenjiangpeng@xtpt.e-u.cn']

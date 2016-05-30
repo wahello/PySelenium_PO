@@ -5,6 +5,7 @@ __author__ = 'Ray'
 GUI 设计.
 mail：tsbc@vip.qq.com
 2016-05-05
+http://blog.csdn.net/jcodeer?viewmode=contents
 """
 
 from Tkinter import *
@@ -39,19 +40,26 @@ Radiobutton2.grid(row=0, column=2, sticky=W)
 
 
 #使用sticky参数  默认的空间会在网格中居中显示。你可以使用sticky选项去指定对齐方式，可以选择的值有：N/S/E/W，分别代表上/下/左/右。
-key = True
+value = True
 def sendlog():
 	"""按钮发送功能"""
+	global value
 	if sel_radio() == 1:
-		while key:
-			time.sleep(1)
-			syslogc.test()
+		while True:
+			if value:
+				time.sleep(1)
+				syslogc.test()
+			else:
+				print 'stop'
+				return 0
 	elif sel_radio() == 2:
 		print "暂不可用！"
 	else:
 		print "GG!"
+
 def stopsend():
-	key = False
+	global value
+	value = False
 Sendbtn = Button(root, text='发送', command= sendlog)
 Sendbtn.grid(row=0, column=6, rowspan=1, sticky=W+E+S+N, padx=5, pady=5)
 Sendbtn = Button(root, text='停止', command= stopsend)
@@ -75,27 +83,35 @@ def sel_logtype(event):
 	"""下拉框选择日志类型样本"""
 	print logtypeCombo.get()
 
-Label(root, text='选择日志样本：').grid(row=2, column=3, sticky=E)
+Label(root, text='选择日志样本：').grid(row=2, column=4, sticky=E)
 logtype_index = 0
 logtypeCombo = Combobox(root, state='readonly')
 logtypeCombo['values'] = ['Jump漏动扫描', 'Jump信息审计', 'JumpIPS', 'Jump防火墙', 'Jump上网行为', 'Jump主机审计', 'Cisco路由器', 'H3C交换机']
-logtypeCombo.grid(row=2, column=4, columnspan=10, sticky=W)
+logtypeCombo.grid(row=2, column=5, columnspan=10, sticky=W)
 logtypeCombo.current(filetype_index)
 logtypeCombo.bind('<<ComboboxSelected>>', sel_logtype)
 Label(root, text=' ').grid(row=3, column=0, sticky=E)
-filepath = Entry(root, width=65)
+e = StringVar()
+
+#文件路径文本框
+filepath = Entry(root, textvariable=e, width=65, foreground='gray', state='readonly')
+e.set('请选择日志文件')
 filepath.grid(row=4, column=0, columnspan=8, sticky=W)
 
 def checkfile():
-	"""选择文件"""
+	"""选择syslog样例文件"""
 	filename = tkFileDialog.askopenfilename()
-	filepath.config()
+	e.set(filename)
 	print filename
 	return filename
 checkbtn = Button(root, text='. . .', command=checkfile)
 checkbtn.grid(row=4, column=8)
+
+#日样例文本域
 Label(root, text='文本域：').grid(row=5,sticky=W)
 Text(root, width=80, height=8).grid(row=6, column=0, columnspan=10, sticky=W)
+
+#接收地址配置
 Label(root, text='目的端设置：').grid(row=7, column=0, sticky=W)
 
 
@@ -106,7 +122,26 @@ var = StringVar()
 lb = Listbox(root, height=6, width=65, selectmode=BROWSE, listvariable=var)
 lb.grid(row=8, column=0, columnspan=7, rowspan=3, sticky=W)
 
-addbtn = Button(root, text='添加')
+def add_btn():
+	addtl = Toplevel()
+	addtl.title('添加接收地址')
+	addtl.geometry('400x100')
+	addtl.resizable(width=False, height=False)
+	Label(addtl, text='')
+	iplabel = Label(addtl, text='IP地址：')
+	iplabel.grid(row=1, column=0, sticky=W)
+	ipvalue = Entry(addtl)
+	ipvalue.grid(row=1, column=1)
+	protlabel = Label(addtl, text='端口：')
+	protlabel.grid(row=1, column=2, sticky=W)
+	protvalue = Entry(addtl)
+	protvalue.grid(row=1, column=3)
+	ok = Button(addtl, text='确定')
+	ok.grid(row=2, column=0, columnspan=2, sticky=E)
+	cancel = Button(addtl, text='取消', command=addtl.destroy)
+	cancel.grid(row=2, column=3, columnspan=4, sticky=W)
+
+addbtn = Button(root, text='添加', command=add_btn)
 addbtn.grid(row=8, column=8, rowspan=1, sticky=W+E+S+N, padx=5, pady=5)
 addbtn = Button(root, text='编辑')
 addbtn.grid(row=9, column=8, rowspan=1, sticky=W+E+S+N, padx=5, pady=5)
@@ -122,6 +157,7 @@ addbtn.grid(row=10, column=8, rowspan=1, sticky=W+E+S+N, padx=5, pady=5)
 # lb.configure(yscrollcommand = scrl.set)
 # lb.pack(side=left, fill=both)
 # scrl['command'] = lb.yview
+
 root.mainloop()
 
 #选择目录

@@ -118,9 +118,15 @@ Label(root, text='目的端设置：').grid(row=7, column=0, sticky=W)
 # """选中listbox中一行"""
 # def print_item(event):
 # 	print lb.get(lb.curselection())
-var = StringVar()
-lb = Listbox(root, height=6, width=65, selectmode=BROWSE, listvariable=var)
-lb.grid(row=8, column=0, columnspan=7, rowspan=3, sticky=W)
+list = Treeview(height="4", columns=("ID","IP","PORT"), selectmode="extended")
+list.heading('#1', text='ID', anchor='center')
+list.heading('#2', text='IP', anchor='center')
+list.heading('#3', text='端口', anchor='center')
+list.column('#1', stretch=NO, minwidth=0, width=100)
+list.column('#2', stretch=NO, minwidth=0, width=200)
+list.column('#3', stretch=NO, minwidth=0, width=140)
+list.column('#0', stretch=NO, minwidth=0, width=0) #width 0 to not display it
+list.grid(row=8, column=0, rowspan=3, columnspan=7, sticky='w')
 
 def add_btn():
 	addtl = Toplevel()

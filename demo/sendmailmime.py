@@ -53,7 +53,7 @@ def send_mail(to_list, sub):
     part.add_header('Content-Disposition', 'attachment', filename="foo.pdf")
     msg.attach(part)
 
-    #mp3类型附件
+    #doc类型附件
     part = MIMEApplication(open('foo.doc','rb').read())
     part.add_header('Content-Disposition', 'attachment', filename="foo.doc")
     msg.attach(part)

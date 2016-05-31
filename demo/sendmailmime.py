@@ -43,7 +43,7 @@ def send_mail(to_list, sub):
     part.add_header('Content-Disposition', 'attachment', filename="foo.xlsx")
     msg.attach(part)
 
-    #jpg类型附件
+    #txt类型附件
     part = MIMEApplication(open('foo.txt','rb').read())
     part.add_header('Content-Disposition', 'attachment', filename="foo.txt")
     msg.attach(part)

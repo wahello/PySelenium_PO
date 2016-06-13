@@ -72,8 +72,8 @@ def test():
 	cf.read('send.config')
 	host = cf.get('receiver', 'host').split(',')#获取接收log服务主机
 	port = int(cf.get('receiver', 'port'))
-	sip  = randomip.__get_random_ip([cf.get('mesg', 'sip')])#随机生成源IP
-	dip	 = randomip.__get_random_ip([cf.get('mesg', 'dip')])#随机生成目的IP
+	sip  = randomip.get_random_ip([cf.get('mesg', 'sip')])#随机生成源IP
+	dip	 = randomip.get_random_ip([cf.get('mesg', 'dip')])#随机生成目的IP
 	sportstr = tuple(cf.get('mesg', 'sport').split(',')) #随机生成源端口
 	sport = str(random.randint(int(sportstr[0]), int(sportstr[1])))
 	dportstr = cf.get('mesg', 'dport').split(',')#随机生成目的端口

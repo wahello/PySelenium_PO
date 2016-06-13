@@ -133,7 +133,8 @@ def add_btn():
 	addtl.title('添加接收地址')
 	addtl.geometry('400x100')
 	addtl.resizable(width=False, height=False)
-	Label(addtl, text='')
+	firstline = Label(addtl, text='  ')
+	firstline.grid(row=0)
 	iplabel = Label(addtl, text='IP地址：')
 	iplabel.grid(row=1, column=0, sticky=W)
 	ipvalue = Entry(addtl)
@@ -172,5 +173,3 @@ root.mainloop()
 # fname = tkFileDialog.askopenfilename()
 # print fname
 # print dirname
-
-

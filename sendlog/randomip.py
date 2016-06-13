@@ -10,7 +10,7 @@ import ConfigParser
 # ip = cf.get('ipnet', 'ip')
 #
 # RANDOM_IP_POOL=['10.0.1.10/24']
-def __get_random_ip(RANDOM_IP_POOL):
+def get_random_ip(RANDOM_IP_POOL):
     str_ip = RANDOM_IP_POOL[random.randint(0, len(RANDOM_IP_POOL) - 1)]
     # print str_ip
     str_ip_addr = str_ip.split('/')[0]
@@ -26,5 +26,5 @@ def __get_random_ip(RANDOM_IP_POOL):
     # print socket.inet_ntoa(struct.pack('>I', random.randint(ip_addr_min, ip_addr_max)))
     return socket.inet_ntoa(struct.pack('>I', random.randint(ip_addr_min, ip_addr_max)))
 
-if __name__ == '__main__':
-    __get_random_ip(RANDOM_IP_POOL)
+# if __name__ == '__main__':
+#     __get_random_ip(RANDOM_IP_POOL)

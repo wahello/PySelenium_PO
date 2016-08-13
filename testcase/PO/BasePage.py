@@ -114,7 +114,7 @@ class Action(object):
 
 	#读取元素标签和元素唯一标识
 	@staticmethod
-	def locate(index, filepath="..\\data\\case_data.xls", sheetno=0):
+	def locate(index, filepath="../data/case_data.xls", sheetno=0):
 		"""
 		filepath: 文件路径
 		sheetno：Sheet编号
@@ -132,16 +132,16 @@ class Action(object):
 		name：自定义图片的名称
 		"""
 		day = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-		fp = "..\\result\\" + day + "\\image"
+		fp = "../result/" + day + "/image"
 		tm = self.saveTime()
 		type = ".png"
 		if os.path.exists(fp):
-			filename = str(fp)+"\\" + str(tm)+str("_")+str(name)+str(type)
+			filename = str(fp)+"/" + str(tm)+str("_")+str(name)+str(type)
 			print filename
 			return filename
 		else:
 			os.makedirs(fp)
-			filename = str(fp)+ "\\" + str(tm)+str("_")+str(name)+str(type)
+			filename = str(fp)+ "/" + str(tm)+str("_")+str(name)+str(type)
 			print filename
 			return filename
 

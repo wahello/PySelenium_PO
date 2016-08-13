@@ -18,7 +18,7 @@ class Upload():
 	username = "root"
 	password = "a1b2c3"
 	hostname = "192.168.200.8"
-	localdir = "..\\result\\"
+	localdir = "../result/"
 	romotedir = "/opt/lampp/htdocs/result/"
 	port = 22
 
@@ -49,8 +49,8 @@ class Upload():
 	"""
 	os.walk()输出为:
 	([路径],[目录],[文件])
-	('..\\result\\2014-12-18', ['image'], ['2014-12-18-10_42_43_result.html'])
-	('..\\result\\2014-12-18\\image', [], ['2014-12-18-11_28_33_login.png', '2014-12-18-11_28_36_login.png'])
+	('../result/2014-12-18', ['image'], ['2014-12-18-10_42_43_result.html'])
+	('../result/2014-12-18/image', [], ['2014-12-18-11_28_33_login.png', '2014-12-18-11_28_36_login.png'])
 
 	"""
 	path = localdir + day
@@ -61,10 +61,10 @@ class Upload():
 			tt = i[1]   #i[0] 是路径； i[1] 目录名称列表； i[2] 是文件列表
 			if len(tt) > 0:  #当tt>0时，说明是根目录（入口目录）下，tt<0时，说明当前是叶子目录
 				print u" = +当前目录 " + str(i[0]) + u" 下的文件有："
-				ff = i[0].split('\\')#使用\进行路径分割
+				ff = i[0].split('/')#使用\进行路径分割
 				ddir = ff[len(ff)-1]#获取末尾的文件目录名称
 				for j in i[2]:
-					localn = localdir + ddir + "\\" + j
+					localn = localdir + ddir + "/" + j
 					romoten = romotedir + ddir + "/" + j
 					print j
 					# print localn
@@ -87,10 +87,10 @@ class Upload():
 							pass
 			elif len(tt) < 1:
 				print u" = +当前目录 " + str(i[0]) + u" 下的文件有："
-				ff = i[0].split('\\')#使用\进行路径分割
+				ff = i[0].split('/')#使用\进行路径分割
 				fdir = ff[len(ff)-1]#获取末尾的文件目录名称
 				for j in i[2]:
-					localn = str(i[0]) + "\\" + j #str(i[0]) == localdir + fdir
+					localn = str(i[0]) + "/" + j #str(i[0]) == localdir + fdir
 					romoten = "/opt/lampp/htdocs/result/" + day +"/"+ fdir + "/" + j
 					print j
 					# print localn

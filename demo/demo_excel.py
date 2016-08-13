@@ -13,7 +13,7 @@ class MyTestCase(unittest.TestCase):
 		.encode('cp936')
 		.decode('utf-8').encode(types)
 		"""
-		data = xlrd.open_workbook(u"..\\data\\login_126mail_data.xls")
+		data = xlrd.open_workbook(u"../data/login_126mail_data.xls")
 		#通过索引顺序获取
 		table = data.sheets()[0]
 		#通过索引顺序获取

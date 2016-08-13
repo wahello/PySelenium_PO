@@ -11,14 +11,14 @@ def savePngName(name):
     tm = saveTime()
     day = time.strftime('%Y-%m-%d', time.localtime(time.time()))
     type = ".png"
-    fp = "..\\result\\" + day + "\\image"
+    fp = "../result/" + day + "/image"
     if os.path.exists(fp):
-        filename = str(fp)+"\\" + str(tm)+str("_")+str(name)+str(type)
+        filename = str(fp)+"/" + str(tm)+str("_")+str(name)+str(type)
         print filename
         return filename
     else:
         os.makedirs(fp)
-        filename = str(fp)+ "\\" + str(tm)+str("_")+str(name)+str(type)
+        filename = str(fp)+ "/" + str(tm)+str("_")+str(name)+str(type)
         print filename
         return filename
 

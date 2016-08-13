@@ -13,8 +13,8 @@ password = 'a1b2c3d4'
 to = ['chenjiangpeng@xtpt.e-u.cn']
 #to = ['chenjiangpeng@xtpt.e-u.cn','zhangyy@xtpt.e-u.cn','liujiao@xtpt.e-u.cn']
 day = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-directory = '..\\result\\'
-path = directory+day+"\\"
+directory = '../result/'
+path = "/"
 
 def sortfile(path):
 	"""

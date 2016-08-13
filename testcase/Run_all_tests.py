@@ -10,7 +10,7 @@ import time
 import os
 
 casepath = "."
-result = "..\\result\\"
+result = "../result/"
 
 
 def Creatsuite():
@@ -37,7 +37,7 @@ day = time.strftime('%Y-%m-%d', time.localtime(time.time()))
 #定义个报告存放路径，支持相对路径
 tdresult = result + day
 if os.path.exists(tdresult):
-	filename = tdresult + "\\" + now + "_result.html"
+	filename = tdresult + "/" + now + "_result.html"
 	fp = file(filename, 'wb')
 	#定义测试报告
 	runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'自动化测试报告', description=u'用例执行情况：')
@@ -47,7 +47,7 @@ if os.path.exists(tdresult):
 	fp.close()  #关闭报告文件
 else:
 	os.mkdir(tdresult)
-	filename = tdresult + "\\" + now + "_result.html"
+	filename = tdresult + "/" + now + "_result.html"
 	fp = file(filename, 'wb')
 	#定义测试报告
 	runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'自动化测试报告', description=u'用例执行情况：')

@@ -5,7 +5,7 @@ import csv
 class Readcsv():
 
 	#读取本地CSV文件
-	my_file = "data\\mail_login.csv"
+	my_file = "data/mail_login.csv"
 
 	data = csv.reader(file(my_file, 'rb'))
 

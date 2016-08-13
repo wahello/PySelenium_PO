@@ -12,7 +12,7 @@ class LoginPage(BasePage.Action):
 	"""
 	LoginPage 对象库组件
 	"""
-	fpath = "..\\data\\case_data.xls"
+	fpath = "../data/case_data.xls"
 	#定位器，通过元素属性定位元素对象
 	# username_loc = (By.ID, "idInput")
 	# password_loc = (By.ID, "pwdInput")

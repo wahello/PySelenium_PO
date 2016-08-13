@@ -76,7 +76,7 @@ class Login126Mail(unittest.TestCase):
 		return func
 
 def __generateTestCases():
-	data = xlrd.open_workbook(u".\\login.xls")
+	data = xlrd.open_workbook(u"./login.xls")
 	#通过索引顺序获取Excel数据
 	table = data.sheets()[0]
 	#通过for循环生产多个 test_login_ 函数

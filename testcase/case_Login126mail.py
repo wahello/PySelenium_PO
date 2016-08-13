@@ -26,7 +26,7 @@ class Login126Mail(unittest.TestCase):
 		cls.verificationErrors = []
 		#载入ini配置文件
 		cf = ConfigParser.ConfigParser()
-		cf.read("..\\data\\login_126mail_data.ini")
+		cf.read("../data/login_126mail_data.ini")
 		#读取配置数据
 		cls.base_url = cf.get("urlconf", "url")
 		#定义用户名密码变量
@@ -79,7 +79,7 @@ class Login126Mail(unittest.TestCase):
 		cls.driver.quit()
 
 def __generateTestCases():
-	data = xlrd.open_workbook("..\\data\\case_data.xls")
+	data = xlrd.open_workbook("../data/case_data.xls")
 	#通过索引顺序获取Excel表
 	table = data.sheets()[1]
 	for args in range(1, table.nrows):

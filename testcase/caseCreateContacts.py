@@ -19,7 +19,7 @@ class CaseContact126mail(unittest.TestCase):
 		self.verificationErrors = []
 		#载入ini配置文件
 		cf = ConfigParser.ConfigParser()
-		cf.read("..\\data\\login_126mail_data.ini")
+		cf.read("../data/login_126mail_data.ini")
 		#读取配置数据 url地址
 		self.url = cf.get("urlconf", "url")
 		login_page = LoginPage.LoginPage(self.driver, self.url, u"网易")
